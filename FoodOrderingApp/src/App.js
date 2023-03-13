@@ -5,6 +5,8 @@ function App() {
   return (
     <React.Fragment>
       <Header></Header>
+      {/* <Cart></Cart> */}
+      {/* <Meals></Meals> */}
     </React.Fragment>
   );
 }
