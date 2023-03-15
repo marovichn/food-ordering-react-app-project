@@ -29,7 +29,7 @@ const Cart = (props) => {
     <Modal>
       {props.ordered ? (
         <React.Fragment>
-          <h1>SUCCESS!</h1>
+          <h1>SUCCESSFULY ORDERED!</h1>
           <div className={classes.actions}>
             <button className={classes["button--alt"]} onClick={handleClose}>
               Close
