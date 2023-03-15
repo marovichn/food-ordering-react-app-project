@@ -1,43 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import Header from "./Layout/Header";
 import Meals from "./Meals/Meals";
 import Cart from "./Cart/Cart";
 import CartProvider from "./context/CartProvider";
 
 function App() {
-  const [cartData, setCartData] = useState({
-    isClosed: true,
-    isOrdered: false,
-  });
+  const [cartIsShown, setCartIsShown] = useState(false);
 
-  const showCart = (data) => {
-    setCartData((prev) => {
-      return { ...prev, isClosed: false };
-    });
+  const showCartHandler = () => {
+    setCartIsShown(true);
   };
 
-  const closeHandler = (data) => {
-    setCartData((prev) => {
-      return { ...prev, isClosed: true, isOrdered: false };
-    });
-  };
-
-  const orderHandler = (data) => {
-    setCartData((prev) => {
-      return { ...prev, isOrdered: true, isClosed: false };
-    });
+  const hideCartHandler = () => {
+    setCartIsShown(false);
   };
 
   return (
     <CartProvider>
-      <Header onClick={showCart}></Header>
-      {!cartData.isClosed && (
-        <Cart
-          onClosing={closeHandler}
-          onOrder={orderHandler}
-          ordered={cartData.isOrdered}
-        ></Cart>
-      )}
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
       </main>
