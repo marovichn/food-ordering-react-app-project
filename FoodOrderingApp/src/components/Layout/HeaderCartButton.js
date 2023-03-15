@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import CartIcon from "../Cart/CartIcon";
-import CartContext from "../store/cart-context";
-import classes from "./HeaderCartButton.module.css";
+import CartIcon from '../Cart/CartIcon';
+import CartContext from '../../store/cart-context';
+import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
