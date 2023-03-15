@@ -26,7 +26,7 @@ const Cart = (props) => {
   };
 
   return (
-    <Modal>
+    <Modal onClick={handleClose}>
       {props.ordered ? (
         <React.Fragment>
           <h1>SUCCESSFULY ORDERED!</h1>

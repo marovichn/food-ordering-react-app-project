@@ -30,14 +30,12 @@ function App() {
   return (
     <React.Fragment>
       <Header onClick={showCart}></Header>
-      {!cartData.isClosed ? (
+      {!cartData.isClosed && (
         <Cart
           onClosing={closeHandler}
           onOrder={orderHandler}
           ordered={cartData.isOrdered}
         ></Cart>
-      ) : (
-        ""
       )}
       <main>
         <Meals />
